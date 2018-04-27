@@ -35,19 +35,33 @@ class CardsViewController: UIViewController {
             cardInitialCenter = cardImageView.center
         } else if sender.state == .changed {
             print("Gesture is changing")
+            var angle = 0.0
             if (translation.x > 0) {
-                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(20 * Double.pi / 180))
+                if (translation.x < 15) {
+                    angle = Double(translation.x)
+                } else {
+                    angle = 15.0
+                }
+                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(angle * Double.pi / 180))
                 cardImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y:cardInitialCenter.y)
             } else {
-                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(-20 * Double.pi / 180))
+                if (translation.x > -15) {
+                    angle = Double(translation.x)
+                } else {
+                    angle = -15.0
+                }
+                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(angle * Double.pi / 180))
                 cardImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y:cardInitialCenter.y)
             }
         } else if sender.state == .ended {
             print("Gesture ended")
-            if (translation.x > 0) {
-                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(0))
+            
+            if (translation.x > 100) {
+                cardImageView.transform = CGAffineTransform(translationX: 500, y: 0)
+            } else if (translation.x < -100) {
+                cardImageView.transform = CGAffineTransform(translationX: -500, y: 0)
             } else {
-                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(0))
+                cardImageView.transform = CGAffineTransform.identity
             }
 
         }
