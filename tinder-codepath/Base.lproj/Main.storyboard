@@ -32,6 +32,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Gd2-Wt-j1D" appends="YES" id="gge-Ud-K0J"/>
+                                    <outletCollection property="gestureRecognizers" destination="1jH-Kh-xfr" appends="YES" id="cw9-Xf-ufT"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -48,28 +49,56 @@
                         <action selector="didPanCard:" destination="BYZ-38-t0r" id="P6B-ce-fZa"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="1jH-Kh-xfr">
+                    <connections>
+                        <segue destination="edw-Wb-V9f" kind="presentation" id="C0E-Hs-eh1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="230" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="R2a-Aj-WY1">
             <objects>
-                <viewController id="edw-Wb-V9f" sceneMemberID="viewController">
+                <viewController id="edw-Wb-V9f" customClass="ProfileViewController" customModule="tinder_codepath" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZH9-4w-F1h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nav_bar2" translatesAutoresizingMaskIntoConstraints="NO" id="sVB-Ky-FsG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mUv-XP-pEv" appends="YES" id="eEH-kX-qSs"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-Dz-aDZ">
+                                <rect key="frame" x="16" y="136" width="343" height="395"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="DAX-xf-QGD"/>
                     </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="aO8-Dz-aDZ" id="Wgt-mA-k8W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9KN-Bz-eDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mUv-XP-pEv">
+                    <connections>
+                        <action selector="didTap:" destination="edw-Wb-V9f" id="VE5-6L-mqk"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="970" y="129"/>
+            <point key="canvasLocation" x="992.79999999999995" y="133.5832083958021"/>
         </scene>
     </scenes>
     <resources>
         <image name="action_buttons" width="320" height="108"/>
         <image name="nav_bar" width="320" height="65"/>
+        <image name="nav_bar2" width="320" height="65"/>
         <image name="ryan" width="449" height="514"/>
     </resources>
 </document>

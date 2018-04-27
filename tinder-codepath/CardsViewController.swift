@@ -15,8 +15,8 @@ class CardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        cardImageView.layer.cornerRadius = 10.0;
+        cardImageView.image = #imageLiteral(resourceName: "ryan")
+        cardImageView.layer.cornerRadius = 10.0
         
     }
 
@@ -26,8 +26,6 @@ class CardsViewController: UIViewController {
     }
     
     @IBAction func didPanCard(_ sender: UIPanGestureRecognizer) {
-        let location = sender.location(in: view)
-        let velocity = sender.velocity(in: view)
         let translation = sender.translation(in: view)
         
         if sender.state == .began {
@@ -57,14 +55,28 @@ class CardsViewController: UIViewController {
             print("Gesture ended")
             
             if (translation.x > 100) {
-                cardImageView.transform = CGAffineTransform(translationX: 500, y: 0)
+                UIView.animate(withDuration:0.4, delay: 0.0,
+                               options: [],
+                               animations: { () -> Void in
+                                self.cardImageView.transform = CGAffineTransform(translationX: 500, y: 0)
+                }, completion: nil)
             } else if (translation.x < -100) {
-                cardImageView.transform = CGAffineTransform(translationX: -500, y: 0)
+                UIView.animate(withDuration:0.4, delay: 0.0,
+                               options: [],
+                               animations: { () -> Void in
+                                self.cardImageView.transform = CGAffineTransform(translationX: -500, y: 0)
+                }, completion: nil)
             } else {
                 cardImageView.transform = CGAffineTransform.identity
             }
 
         }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! ProfileViewController
+        destinationViewController.image = self.cardImageView.image
     }
 
     
