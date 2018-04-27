@@ -16,6 +16,8 @@ class CardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cardImageView.layer.cornerRadius = 10.0;
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,9 +35,21 @@ class CardsViewController: UIViewController {
             cardInitialCenter = cardImageView.center
         } else if sender.state == .changed {
             print("Gesture is changing")
-            cardImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y:cardInitialCenter.y)
+            if (translation.x > 0) {
+                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(20 * Double.pi / 180))
+                cardImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y:cardInitialCenter.y)
+            } else {
+                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(-20 * Double.pi / 180))
+                cardImageView.center = CGPoint(x: cardInitialCenter.x + translation.x, y:cardInitialCenter.y)
+            }
         } else if sender.state == .ended {
             print("Gesture ended")
+            if (translation.x > 0) {
+                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(0))
+            } else {
+                cardImageView.transform = CGAffineTransform(rotationAngle: CGFloat(0))
+            }
+
         }
     }
 
