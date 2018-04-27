@@ -14,6 +14,7 @@
 		9D47647C208570FC00C61192 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D47647A208570FC00C61192 /* LaunchScreen.storyboard */; };
 		9D476487208570FC00C61192 /* tinder_codepathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D476486208570FC00C61192 /* tinder_codepathTests.swift */; };
 		9D476492208570FC00C61192 /* tinder_codepathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D476491208570FC00C61192 /* tinder_codepathUITests.swift */; };
+		9D4764A0208573DC00C61192 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D47649F208573DC00C61192 /* CardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		9D47648D208570FC00C61192 /* tinder-codepathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tinder-codepathUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D476491208570FC00C61192 /* tinder_codepathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinder_codepathUITests.swift; sourceTree = "<group>"; };
 		9D476493208570FC00C61192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D47649F208573DC00C61192 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				9D476478208570FC00C61192 /* Assets.xcassets */,
 				9D47647A208570FC00C61192 /* LaunchScreen.storyboard */,
 				9D47647D208570FC00C61192 /* Info.plist */,
+				9D47649F208573DC00C61192 /* CardsViewController.swift */,
 			);
 			path = "tinder-codepath";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				9D476474208570FC00C61192 /* ViewController.swift in Sources */,
 				9D476472208570FC00C61192 /* AppDelegate.swift in Sources */,
+				9D4764A0208573DC00C61192 /* CardsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
